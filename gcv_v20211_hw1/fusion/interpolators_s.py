@@ -112,8 +112,8 @@ def pairwise_interpolate_predictions(
                 #  to construct a bilinear interpolator from distances predicted
                 #  in `view_i` (i.e. `distances_i`) into the point in `view_j`.
                 #  Use the interpolator to compute an interpolated distance value.
-                interpolator = interpolate.bisplrep(point_from_j_nns[:,0],point_from_j_nns[:,1],distances_i.reshape(-1,1)[point_nn_indexes],kx=1,ky=1)
-                distances_j_interp[idx] = interpolate.bisplev(point_from_j[0],point_from_j[1],interpolator)
+                interpolator = interpolate.interp2d(point_from_j_nns[:,0],point_from_j_nns[:,1],distances_i.reshape(-1,1)[point_nn_indexes])
+                distances_j_interp[idx] = interpolator(point_from_j[0],point_from_j[1])
 
             except ValueError as e:
                 print('Error while interpolating point {idx}:'

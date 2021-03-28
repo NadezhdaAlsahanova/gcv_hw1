@@ -1,2 +1,3 @@
-# gcv_hw1
- Homework1 for course GCV
+# gcv_v20211_hw1
+
+Please download the validation datasets at [validation.zip](https://www.dropbox.com/s/lxg7lb8xqcmxowa/validation.zip?dl=0)
